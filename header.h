@@ -24,22 +24,6 @@ typedef struct stack_s
 } stack_t;
 
 /**
- * struct instruction_s - opcode and its function
- * @opcode: the opcode
- * @f: function to handle the opcode
- *
- * Description: opcode and its function
- * for stack, queues, LIFO, FIFO
-*/
-
-typedef struct instruction_s
-{
-	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
-} instruction_t;
-
-
-/**
  * struct operation_s - a struct to help pass data
  * @arg: argument
  * @file: pointer to the file
@@ -52,17 +36,31 @@ typedef struct operation_s
 	FILE *file;
 	char *content;
 } operation_t;
-extern operation_t G_op;
+
+/**
+ * struct instruction_s - opcode and its function
+ * @opcode: the opcode
+ * @f: function to handle the opcode
+ *
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO
+*/
+
+typedef struct instruction_s
+{
+        char *opcode;
+        void (*f)(stack_t **stack, unsigned int line_number, operation_t *G_op);
+} instruction_t;
 
 
-int execute_monty(char *line, stack_t **stack, unsigned int count, FILE *file);
+int execute_monty(char *line, stack_t **stack, unsigned int count, FILE *file, operation_t *G_op);
 void free_stack(stack_t *stack);
-void fpush(stack_t **stack, unsigned int count);
-void fpop(stack_t **stack, unsigned int count);
-void fadd(stack_t **stack, unsigned int count);
-void fnop(stack_t **stack, unsigned int count);
-void fpall(stack_t **stack, unsigned int count);
-void fpint(stack_t **stack, unsigned int count);
-void fswap(stack_t **stack, unsigned int count);
+void fpush(stack_t **stack, unsigned int count, operation_t *G_op);
+void fpop(stack_t **stack, unsigned int count, operation_t *G_op);
+void fadd(stack_t **stack, unsigned int count, operation_t *G_op);
+void fnop(stack_t **stack, unsigned int count, operation_t *G_op);
+void fpall(stack_t **stack, unsigned int count, operation_t *G_op);
+void fpint(stack_t **stack, unsigned int count, operation_t *G_op);
+void fswap(stack_t **stack, unsigned int count, operation_t *G_op);
 void addNode(stack_t **stack, int n);
 #endif

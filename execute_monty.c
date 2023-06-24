@@ -5,9 +5,12 @@
  * @stack: pointer to the stack
  * @count: line number of th ecommand
  * @file: pointer to the file
+ * @G_op: data container
  * Return: int value
 */
-int execute_monty(char *line, stack_t **stack, unsigned int count, FILE *file)
+int execute_monty(char *line, stack_t **stack,
+		unsigned int count,
+		FILE *file, operation_t *G_op)
 {
 	instruction_t operations[] = {
 		{"push", fpush},
@@ -28,12 +31,12 @@ int execute_monty(char *line, stack_t **stack, unsigned int count, FILE *file)
 	{
 		return (0);
 	}
-	G_op.arg = strtok(NULL, " \n\t");
+	G_op->arg = strtok(NULL, " \n\t");
 	while (operations[i].opcode && op)
 	{
 		if (strcmp(operations[i].opcode, op) == 0)
 		{
-			operations[i].f(stack, count);
+			operations[i].f(stack, count, G_op);
 			return (0);
 		}
 		i++;
