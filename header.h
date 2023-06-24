@@ -48,12 +48,13 @@ typedef struct operation_s
 
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number, operation_t *G_op);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number, operation_t *G_op);
 } instruction_t;
 
 
-int execute_monty(char *line, stack_t **stack, unsigned int count, FILE *file, operation_t *G_op);
+int execute_monty(char *line, stack_t **stack, unsigned int count,
+		FILE *file, operation_t *G_op);
 void free_stack(stack_t *stack);
 void fpush(stack_t **stack, unsigned int count, operation_t *G_op);
 void fpop(stack_t **stack, unsigned int count, operation_t *G_op);
