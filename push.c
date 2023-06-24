@@ -1,5 +1,10 @@
 #include "header.h"
-
+/**
+ * fpush - pushes a node to the stack
+ * @stack: pointer to the stack
+ * @count: line number
+ * Return: Nothing
+*/
 void fpush(stack_t **stack, unsigned int count)
 {
 	int flag = 0, i = 0, n;
@@ -24,7 +29,7 @@ void fpush(stack_t **stack, unsigned int count)
 		n = atoi(G_op.arg);
 		addNode(stack, n);
 	}
-	else 
+	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", count);
 		fclose(G_op.file);

@@ -1,5 +1,10 @@
 #include "header.h"
-
+/**
+ * addNode - adds a node at the end of the node
+ * @stack: pointer to the stack
+ * @n: data to store in the node
+ * Return: void
+*/
 void addNode(stack_t **stack, int n)
 {
 	stack_t *new, *tmp;

@@ -1,5 +1,10 @@
 #include "header.h"
-
+/**
+ * fswap - swap the value of two stack nodes
+ * @stack: pointer to a stack
+ * @count: line number
+ * Return: Nothing
+*/
 void fswap(stack_t **stack, unsigned int count)
 {
 	stack_t *h;

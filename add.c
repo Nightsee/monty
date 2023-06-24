@@ -1,5 +1,12 @@
 #include "header.h"
 
+/**
+ * fadd - adds an element to the stack.
+ * @st: pointer to the stack
+ * @count: line number
+ * Return: nothing
+*/
+
 void fadd(stack_t **st, unsigned int count)
 {
 	stack_t *tmp;

@@ -1,5 +1,10 @@
 #include "header.h"
-
+/**
+ * fpop - pops an element from the stack
+ * @stack: pointer to the stack
+ * @count: line number
+ * Return: Nothing
+*/
 void fpop(stack_t **stack, unsigned int count)
 {
 	stack_t *tmp;

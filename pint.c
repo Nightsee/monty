@@ -1,5 +1,12 @@
 #include "header.h"
 
+/**
+ * fpint - prints the data in one.
+ * @stack: pointer to the stack
+ * @count: line number
+ * Return: nothing
+*/
+
 void fpint(stack_t **stack, unsigned int count)
 {
 	if (*stack == NULL)

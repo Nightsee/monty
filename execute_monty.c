@@ -1,5 +1,12 @@
 #include "header.h"
-
+/**
+ * execute_monty - executes the monty code
+ * @line: the command
+ * @stack: pointer to the stack
+ * @count: line number of th ecommand
+ * @file: pointer to the file
+ * Return: int value
+*/
 int execute_monty(char *line, stack_t **stack, unsigned int count, FILE *file)
 {
 	instruction_t operations[] = {
@@ -31,7 +38,6 @@ int execute_monty(char *line, stack_t **stack, unsigned int count, FILE *file)
 		}
 		i++;
 	}
-	/* if the code does not match with any of those in operations opcodes then we should print error */
 	if (op && operations[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", count, op);

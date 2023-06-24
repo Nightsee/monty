@@ -1,7 +1,12 @@
 #define  _GNU_SOURCE
 #include "header.h"
 
-operation_t G_op = {NULL, NULL, NULL};
+/**
+ * main - entry point
+ * @ac: number of arguments
+ * @av: array of arguments
+ * Return: int
+*/
 
 int main(int ac, char **av)
 {
@@ -11,6 +16,8 @@ int main(int ac, char **av)
 	ssize_t readline = 1;
 	stack_t *stack = NULL;
 	unsigned int count = 1;
+
+	operation_t G_op = {NULL, NULL, NULL};
 
 	if (ac != 2)
 	{
