@@ -7,6 +7,7 @@
  * @av: array of arguments
  * Return: int
 */
+operation_t G_op = {NULL, NULL, NULL};
 
 int main(int ac, char **av)
 {
@@ -17,7 +18,6 @@ int main(int ac, char **av)
 	stack_t *stack = NULL;
 	unsigned int count = 1;
 
-	operation_t G_op = {NULL, NULL, NULL};
 
 	if (ac != 2)
 	{
