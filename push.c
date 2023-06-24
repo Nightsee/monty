@@ -3,7 +3,7 @@
  * fpush - pushes a node to the stack
  * @stack: pointer to the stack
  * @count: line number
- * @G_op-> data container
+ * @G_op: data container
  * Return: Nothing
 */
 void fpush(stack_t **stack, unsigned int count, operation_t *G_op)
